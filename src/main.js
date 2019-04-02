@@ -5,7 +5,6 @@ import Store from './store'
 
 Vue.config.productionTip = false
 
-Vue.use(VueAxios);
 
 /* eslint-disable no-new */
 new Vue({

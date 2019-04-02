@@ -1,28 +1,29 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <index-page/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import IndexPage from '@/pages/Index'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    IndexPage
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  html, body{height: 100%; background-color: #e3f2fd;}
+  #app {
+    font-family: GillSans, Calibri, Trebuchet, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+
+    height: 100%;
+  }
 </style>
