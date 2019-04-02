@@ -1,6 +1,6 @@
 <template>
     <div class="deploy-console valign-wrapper">
-        <code class="left-align console-segment">
+        <code class="left-align console-segment flow-text">
            .npmjs.org/saas-loader- Not found
             npm ERR! 404
             npm ERR! 404  'saas-loader@latest' is not in the npm registry.

@@ -1,6 +1,7 @@
 <template>
     <div>
         <navigator />
+        <RequestProgress />
         <div class="container deploy-container ">
             <div class="deploy-panel">
                 <div class="row">
@@ -27,13 +28,14 @@
 
 <script>
     import Navigator from '@/components/index/Navigator'
+    import RequestProgress from '@/components/index/RequestProgress'
     import DeployBtn from '@/components/index/DeployBtn'
     import ConsolePanel from '@/components/index/ConsolePanel'
     import Toolkit from '@/components/index/Toolkit'
     export default {
         name: "Index",
         components: {
-            Navigator, DeployBtn, ConsolePanel, Toolkit
+            Navigator, RequestProgress, DeployBtn, ConsolePanel, Toolkit
         }
     }
 </script>
