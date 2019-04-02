@@ -27,6 +27,7 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
+      'materialize-css'  : path.resolve(__dirname, '../node_modules/materialize-css/dist/js/materialize.js'),
     }
   },
   module: {
