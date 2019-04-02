@@ -1,19 +1,31 @@
 <template>
     <div class="row">
         <div v-for="(name, index) in items" class="col s4 m2">
-            <a class="waves-effect btn-floating deploy-btn btn-large z-depth-2" :class="bgColor[index]">{{ name }}</a>
+            <a class="waves-effect btn-floating deploy-btn btn-large z-depth-2"
+               :class="bgColor[index]"
+               @click="pull(name)">{{ name }}</a>
         </div>
     </div>
 </template>
 
 <script>
+    import {mapState} from 'vuex'
     export default {
         name: "DeployBtn",
         props: ['items'],
+        computed: mapState({
+           log: state => state.index.log
+        }),
         data () {
             return {
                 name: 'Account',
                 bgColor: ['red accent-3', 'cyan accent-3', 'orange accent-3', 'deep-orange accent-3', 'light-blue accent-3', 'teal accent-3']
+            }
+        },
+        methods: {
+            pull (module) {
+                console.log(this.axios)
+                this.$store.dispatch('pullCodeByModule', module)
             }
         }
     }

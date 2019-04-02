@@ -1,12 +1,16 @@
 <template>
     <div class="progress deep-orange lighten-4 z-depth-4">
-        <div class="determinate deep-orange lighten-2" style="width: 70%"></div>
+        <div class="determinate deep-orange lighten-2" :style="{width: requestProgress}"></div>
     </div>
 </template>
 
 <script>
+    import {mapState} from 'vuex'
     export default {
-        name: "RequestProgress"
+        name: "RequestProgress",
+        computed: mapState({
+            requestProgress: state => state.index.requestProgress
+        })
     }
 </script>
 
