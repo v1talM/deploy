@@ -11,7 +11,7 @@
                             </div>
                             <div class="card-action white">
                                 <!-- 部署按钮 -->
-                                <deploy-btn :items="['account', 'merchant', 'crm', 'trade', 'shopping', 'marketing']"/>
+                                <deploy-btn :items="modules"/>
                             </div>
                         </div>
                     </div>
@@ -26,10 +26,17 @@
 <script>
     import DeployBtn from '@/components/index/DeployBtn'
     import ConsolePanel from '@/components/index/ConsolePanel'
+    import {modules} from "../env";
+
     export default {
         name: "Index",
         components: {
             DeployBtn, ConsolePanel
+        },
+        data () {
+            return {
+                modules: modules
+            }
         }
     }
 </script>

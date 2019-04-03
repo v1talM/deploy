@@ -11,6 +11,8 @@
 <script>
     import index from '@/api/index'
     import {mapState} from 'vuex'
+    import {bgcolor} from "../../env";
+
     export default {
         name: "DeployBtn",
         props: ['items'],
@@ -20,7 +22,7 @@
         data () {
             return {
                 name: 'Account',
-                bgColor: ['red accent-3', 'cyan accent-3', 'orange accent-3', 'deep-orange accent-3', 'light-blue accent-3', 'teal accent-3']
+                bgColor: bgcolor
             }
         },
         methods: {

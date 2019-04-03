@@ -25,7 +25,7 @@
 
 <style lang="sass">
     .deploy-console
-        height: 50rem
+        height: 45rem
         overflow-y: scroll
         border: .1rem #ffffff dashed
         .console-segment
