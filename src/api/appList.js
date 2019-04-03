@@ -10,5 +10,10 @@ export default {
             let data = res.data.data
             return data
         })
+    },
+    bindtmpid (data) {
+        return Vue.axios.post( ApiRoot + '/repertory/front/bindtmpid', data).then(res => {
+            return res.data
+        })
     }
 }

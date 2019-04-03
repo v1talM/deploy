@@ -1,4 +1,3 @@
-import index from '@/api/index'
 const state = {
     log: '',
     requestProgress: '40%',
@@ -6,9 +5,8 @@ const state = {
 }
 
 const mutations = {
-    PULL_CODE_BY_MODULE (state, module) {
-        let res = index.pullCodeByModule(module)
-        state.log += res + '<br/>'
+    PULL_CODE_BY_MODULE (state, res) {
+        state.log += res + '<br/><br/>'
     },
     SET_REQUEST_PROGRESS (state, complete) {
         state.requestProgress = complete

@@ -9,6 +9,7 @@
 </template>
 
 <script>
+    import index from '@/api/index'
     import {mapState} from 'vuex'
     export default {
         name: "DeployBtn",
@@ -24,7 +25,14 @@
         },
         methods: {
             pull (module) {
-                this.$store.dispatch('pullCodeByModule', module)
+                this.$store.dispatch('setRequestShowProgress', true)
+                index.pullCodeByModule(module).then(res => {
+                    var data = res.data.data
+                    data.msg = data.msg.replace(/<\/?[^>]*>/g,'')
+                    data.msg = data.msg.replace(/\\n/g, '<br/>')
+                    this.$store.dispatch('pullCodeByModule', data.msg)
+                    this.$store.dispatch('setRequestShowProgress', false)
+                })
             }
         }
     }
