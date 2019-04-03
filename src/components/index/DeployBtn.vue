@@ -24,7 +24,6 @@
         },
         methods: {
             pull (module) {
-                console.log(this.axios)
                 this.$store.dispatch('pullCodeByModule', module)
             }
         }

@@ -1,16 +1,20 @@
 import index from '@/api/index'
 const state = {
     log: '',
-    requestProgress: '40%'
+    requestProgress: '40%',
+    showProgress: false,
 }
 
 const mutations = {
     PULL_CODE_BY_MODULE (state, module) {
-        let res = index.pullCodeByModule(module) + '<br/>'
+        let res = index.pullCodeByModule(module)
         state.log += res + '<br/>'
     },
     SET_REQUEST_PROGRESS (state, complete) {
         state.requestProgress = complete
+    },
+    SET_REQUEST_SHOWPROGRESS (state, show) {
+        state.showProgress = show
     }
 }
 
@@ -20,6 +24,9 @@ const actions = {
     },
     setRequestProgress ({commit}, complete) {
         commit('SET_REQUEST_PROGRESS', complete)
+    },
+    setRequestShowProgress({commit}, show) {
+        commit('SET_REQUEST_SHOWPROGRESS', show)
     }
 }
 

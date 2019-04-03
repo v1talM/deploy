@@ -75,6 +75,6 @@ const config = {
 export default {
     pullCodeByModule (module) {
         return mock
-        // return Vue.axios.post('', module, config)
+        // return Vue.axios.get( ApiRoot + '/repertory/api/repertoryjson?module=' + module, config )
     }
 }
