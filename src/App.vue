@@ -11,10 +11,15 @@
 import Navigator from '@/components/index/Navigator'
 import RequestProgress from '@/components/index/RequestProgress'
 import Toolkit from '@/components/index/Toolkit'
+import {joke} from "./env";
+
 export default {
   name: 'App',
   components: {
     Navigator, RequestProgress, Toolkit
+  },
+  mounted () {
+      console.log(joke)
   }
 }
 </script>
