@@ -12,7 +12,11 @@ export default {
         })
     },
     bindtmpid (data) {
-        return Vue.axios.post( ApiRoot + '/repertory/front/bindtmpid', data).then(res => {
+        return Vue.axios.post( ApiRoot + '/repertory/front/bindtmpid', data, {
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        }).then(res => {
             return res.data
         })
     }
