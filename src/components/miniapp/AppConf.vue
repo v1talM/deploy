@@ -48,7 +48,9 @@
                     'template_id': parseInt(tmp_id),
                     'type': shop_type
                 }
+                this.$store.dispatch('setRequestShowProgress', true)
                 miniapp.bindtmpid(data).then(res => {
+                    this.$store.dispatch('setRequestShowProgress', false)
                     if (res.errno) {
                         Materialize.toast(res.errmsg, 5000)
                         return
