@@ -4,8 +4,9 @@
         <tr>
             <th data-field=""></th>
             <th data-field="id">小程序名称</th>
-            <th data-field="name">APP-ID</th>
-            <th data-field="price">SHOP-ID</th>
+            <th data-field="app_id">APP-ID</th>
+            <th data-field="shop_id">SHOP-ID</th>
+            <th data-field="shop_type">店铺类型</th>
         </tr>
         </thead>
         <tbody>
@@ -13,13 +14,14 @@
             <td><p>
                 <input name="shop_id" type="radio"
                        v-model="selectApp"
-                       :value="app.wx_name + ' - ' + app.shop_id"
+                       :value="app.wx_name + ' - ' + app.shop_id + ' - ' + app.shop_type"
                        :id="app.shop_id" />
                 <label :for="app.shop_id"></label>
             </p></td>
             <td>{{ app.wx_name }}</td>
             <td>{{ app.app_id }}</td>
             <td>{{ app.shop_id }}</td>
+            <td>{{ shopTypeMap[app.shop_type] }}</td>
         </tr>
         </tbody>
     </table>
@@ -33,7 +35,12 @@
         data () {
             return {
                 appList: [],
-                selectApp: ''
+                selectApp: '',
+                shopTypeMap: {
+                    0: '通用版',
+                    1: '餐饮版',
+                    2: '聚合版'
+                }
             }
         },
         mounted () {
