@@ -5,11 +5,11 @@
             <label :class="{active: selectApp}" for="shop_id">店铺</label>
         </div>
         <div class="input-field col s6">
-            <input value="" id="template_id" type="text" class="validate" v-model="template_id">
-            <label class="" for="template_id">填写模板id</label>
+            <input value="" id="wx_no" type="text" class="validate" v-model="wx_no">
+            <label class="" for="wx_no">填写用户微信id</label>
         </div>
         <div class="col s12 center-align">
-            <button class="btn waves-effect waves-light" type="submit" name="action" @click="bindtmpid">绑定模板
+            <button class="btn waves-effect waves-light" type="submit" name="action" @click="binduser">绑定用户
                 <i class="material-icons right">send</i>
             </button>
         </div>
@@ -26,30 +26,28 @@
         }),
         data () {
             return {
-                template_id: '',
+                wx_no: '',
             }
         },
         methods: {
-            bindtmpid () {
+            binduser () {
                 let split = this.selectApp.split(' - ')
-                let shop_id = split[1]
-                let tmp_id = this.template_id
-                let shop_type = split[2] == 'undefined' ? 0 : split[2]
-                if (shop_id == '' || shop_id == undefined) {
+                let app_id = split[3]
+                let wx_no = this.wx_no
+                if (app_id == '' || app_id == undefined) {
                     Materialize.toast('亲，请选择一个小程序哟！', 5000)
                     return
                 }
-                if (tmp_id == '' || tmp_id == 'undefined') {
-                    Materialize.toast('模板ID不能为空哟！', 5000)
+                if (wx_no == '' || wx_no == 'undefined') {
+                    Materialize.toast('用户微信ID不能为空哟！', 5000)
                     return
                 }
                 let data = {
-                    'shop_id': shop_id,
-                    'template_id': parseInt(tmp_id),
-                    'type': shop_type
+                    'app_id': app_id,
+                    'wx_no': wx_no,
                 }
                 this.$store.dispatch('setRequestShowProgress', true)
-                miniapp.bindtmpid(data).then(res => {
+                miniapp.binduser(data).then(res => {
                     this.$store.dispatch('setRequestShowProgress', false)
                     if (res.errno) {
                         Materialize.toast(res.errmsg, 5000)

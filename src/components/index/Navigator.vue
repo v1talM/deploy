@@ -6,9 +6,12 @@
                              data-tooltip="点击返回首页" title="点击返回首页">{{ emoji[Math.floor(Math.random() * emoji.length)] }}</router-link>
                 <ul class="right hide-on-med-and-down">
                     <!--<li><a href="#"><i class="material-icons">search</i></a></li>-->
-                    <li><router-link :to="{name: 'mini-app'}" class="tooltipped"
+                    <li><router-link :to="{name: 'mini-app'}"
                                      data-position="bottom" data-delay="50"
-                                     data-tooltip="小程序列表" title="小程序列表">提审小程序</router-link></li>
+                                     title="小程序列表">绑定小程序模板</router-link></li>
+                    <li><router-link :to="{name: 'set-mini-app-visitor'}"
+                                     data-position="bottom" data-delay="50"
+                                     title="绑定小程序用户">绑定小程序用户</router-link></li>
                     <!--<li><a href="#"><i class="material-icons">refresh</i></a></li>-->
                 </ul>
             </div>

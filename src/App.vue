@@ -37,7 +37,7 @@ export default {
 </style>
 
 <style lang="sass">
-    .container.deploy-container, .container.miniapp-container
+    .container.deploy-container, .container.miniapp-container, .container.moduleconf-container
         display: flex
         display: -webkit-flex
         align-items: flex-start

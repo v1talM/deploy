@@ -19,5 +19,14 @@ export default {
         }).then(res => {
             return res.data
         })
+    },
+    binduser (data) {
+        return Vue.axios.post( ApiRoot + '/repertory/front/adduser', data, {
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        }).then( res => {
+            return res.data
+        })
     }
 }
