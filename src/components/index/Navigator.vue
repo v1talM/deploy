@@ -12,6 +12,9 @@
                     <li><router-link :to="{name: 'set-mini-app-visitor'}"
                                      data-position="bottom" data-delay="50"
                                      title="绑定小程序用户">绑定小程序用户</router-link></li>
+                    <li><router-link :to="{name: 'query-quota'}"
+                                     data-position="bottom" data-delay="50"
+                                     title="查看平台提审余量">查看平台提审余量</router-link></li>
                     <!--<li><a href="#"><i class="material-icons">refresh</i></a></li>-->
                 </ul>
             </div>

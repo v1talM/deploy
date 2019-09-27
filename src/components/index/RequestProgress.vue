@@ -1,6 +1,6 @@
 <template>
-    <div class="progress deep-orange lighten-4 z-depth-4" v-show="showProgress">
-        <div class="indeterminate deep-orange lighten-2" :style="{width: requestProgress}"></div>
+    <div class="progress blue lighten-4 z-depth-4" v-show="showProgress">
+        <div class="indeterminate blue lighten-2" :style="{width: requestProgress}"></div>
     </div>
 </template>
 

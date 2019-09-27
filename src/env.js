@@ -1,4 +1,4 @@
-export const ApiRoot = 'http://10.188.60.83:8082';
+export const ApiRoot = 'http://10.188.40.141:8082';
 export const modules = ['all', 'account', 'audit', 'crm', 'marketing', 'merchant', 'mp', 'shopping', 'trade', 'schema', 'phplib', 'conf'];
 export const bgcolor = [
     'red accent-3', 'cyan accent-3', 'orange accent-3',
