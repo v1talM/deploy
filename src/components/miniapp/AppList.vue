@@ -10,6 +10,7 @@
                 <th data-field="shop_id">SHOP-ID</th>
                 <th data-field="shop_type">店铺类型</th>
                 <th data-field="shop_qrcode">二维码</th>
+                <th data-field="refresh_token">刷新token</th>
             </tr>
             </thead>
             <tbody>
@@ -29,6 +30,7 @@
                 <td>
                     <a class="btn-floating blue lighten-4" data-target="qrcode_modal" @click="qrcode_modal(app.qr_code)"><i class="material-icons">zoom_in</i></a>
                 </td>
+                <td><a class="btn" @click="refresh_token(app.shop_id)">刷新token</a></td>
             </tr>
             </tbody>
         </table>
@@ -78,6 +80,9 @@
                 } else {
                     this.active_qrcode = url
                 }
+            },
+            refresh_token(shopId) {
+                miniapp.refreshToken(shopId);
             }
         }
     }

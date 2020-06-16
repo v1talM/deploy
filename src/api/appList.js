@@ -28,5 +28,13 @@ export default {
         }).then( res => {
             return res.data
         })
+    },
+    refreshToken (data) {
+        return Vue.axios.get( ApiRoot + '/repertory/front/refreshtoken?shop_id=' + data).then(res => {
+            let data = res.data.data
+            const $callbackContent = '刷新成功，需要一分钟生效请勿短时间内重复操作'
+            Materialize.toast($callbackContent, 4000)
+            return data
+        })
     }
 }
